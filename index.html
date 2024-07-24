@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de Tâches Avancée</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestion de Tâches</h1>
+    </header>
+    <main>
+        <section id="task-search">
+            <h2>Rechercher des Tâches</h2>
+            <div id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Entrer un mot-clé..." />
+                <button type="button" id="searchButton">Rechercher</button>
+            </div>
+        </section>
+        <section id="category-creation">
+            <h2>Ajouter une Categorie </h2>
+            <form id="categoryForm">
+                <input type="text" id="categoryName" name="categoryName" placeholder="Nom de la catégorie" required>
+                <button type="submit">Ajouter une catégorie</button>
+            </form>
+        </section>
+        <section id="task-creation">
+            <h2>Ajouter une Tâche</h2>
+            <form id="taskForm">
+                <input type="text" name= "taskTitle" id="taskTitle" placeholder="Titre de la tâche" required>
+                <textarea name= "taskDescription" id="taskDescription" placeholder="Description de la tâche"></textarea>
+                <input type="date" name= "taskDueDate" id="taskDueDate">
+                <select name= "taskPriority" id="taskPriority">
+                    <option value="Faible">Faible</option>
+                    <option value="Moyenne" selected>Moyenne</option>
+                    <option value="Haute">Haute</option>
+                </select>
+                <select id="taskCategory" name="taskCategory" required>
+                </select>
+                </select>
+                <button type="submit" id="AddTask">Ajouter Tâche</button>
+            </form>
+        </section>
+        <section id="">
+            <form id="editForm" class="edit-form">
+                <input type="text" id="editTaskName" name="editTaskName" placeholder="Task Name">
+                <textarea id="editTaskDescription" name="editTaskDescription" placeholder="Task Description"></textarea>
+                <input type="date" id="editTaskDate" name="editTaskDate">
+                <select id="editTaskPriority" name="editTaskPriority">
+                    <option value="Faible">Faible</option>
+                    <option value="Moyenne">Moyenne</option>
+                    <option value="Haute">Haute</option>
+                </select>
+                <button type="submit">Garder les Modifications</button>
+            </form>
+        </section>
+        <section id="task-filter">
+            <h2>Filtrer les Tâches</h2>
+            <form id="filterForm">
+                <label for="filterPriority">Filtrer par Priorité :</label>
+                <select id="filterPriority">
+                    <option value="all">Toutes</option>
+                    <option value="Haute">Haute</option>
+                    <option value="Moyenne">Moyenne</option>
+                    <option value="Faible">Faible</option>
+                </select>
+
+                <label for="filterDate">Filtrer par Date :</label>
+                <input type="date" id="filterDate">
+
+                <button type="button" id="applyFilter">Appliquer Filtre</button>
+            </form>
+        </section>
+
+        <section id="task-list">
+            <h2>Liste des Tâches</h2>
+            <div id="tasks">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Application de Gestion de Tâches - Thibaut François</p>
+    </footer>
+    <script src="./js/app.js" type="module"></script>
+    <!-- pour que les modules soient compris il faut utiliser un serveur -->
+    <!-- live server -->
+
+    <!-- pour compilier le code automatiquement après chaque modification
+        tsc --watch
+    -->
+</body>
+
+</html>
